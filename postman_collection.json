@@ -1,0 +1,548 @@
+{
+    "info": {
+        "name": "Translator API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "OpenAI Models",
+            "item": [
+                {
+                    "name": "GPT-4o Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Patient presents with acute myocardial infarction and requires immediate intervention\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"openai\",\n    \"model\": \"gpt-4o\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "GPT-4o Mini Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Regular check-up shows normal vital signs and good overall health\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"openai\",\n    \"model\": \"gpt-4o-mini\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Anthropic Models",
+            "item": [
+                {
+                    "name": "Claude 3.5 Sonnet Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Complex surgical procedure requires careful monitoring of vital signs\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"anthropic\",\n    \"model\": \"claude-3-5-sonnet-20241022\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Claude 3.5 Haiku Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Patient medical history indicates no prior complications\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"anthropic\",\n    \"model\": \"claude-3-5-haiku-20241022\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Google Models",
+            "item": [
+                {
+                    "name": "Gemini 2.0 Flash Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Insurance policy coverage details and terms of service\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"insurance\",\n    \"quality_level\": \"high\",\n    \"provider\": \"google\",\n    \"model\": \"gemini-2.0-flash\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Gemini 1.5 Pro Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Comprehensive medical examination report and diagnosis\",\n    \"source_language\": \"en\",\n    \"target_language\": \"zh\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"google\",\n    \"model\": \"gemini-1.5-pro\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Groq Models",
+            "item": [
+                {
+                    "name": "Llama 3.3 70B Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Advanced diagnostic procedures and treatment recommendations\",\n    \"source_language\": \"en\",\n    \"target_language\": \"zh\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"groq\",\n    \"model\": \"llama-3.3-70b-versatile\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Llama 3.3 SpecDec Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Standard insurance claim processing guidelines\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"insurance\",\n    \"quality_level\": \"high\",\n    \"provider\": \"groq\",\n    \"model\": \"llama-3.3-70b-specdec\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "DeepSeek Models",
+            "item": [
+                {
+                    "name": "DeepSeek Chat Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Medical device specifications and usage instructions\",\n    \"source_language\": \"en\",\n    \"target_language\": \"zh\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"deepseek\",\n    \"model\": \"deepseek-chat\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cohere Models",
+            "item": [
+                {
+                    "name": "Command-R Plus Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Insurance policy renewal terms and conditions\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"insurance\",\n    \"quality_level\": \"high\",\n    \"provider\": \"cohere\",\n    \"model\": \"command-r-plus-08-2024\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Hugging Face Models",
+            "item": [
+                {
+                    "name": "Mistral 7B Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Patient discharge summary and follow-up instructions\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"huggingface\",\n    \"model\": \"mistralai/Mistral-7B-Instruct-v0.3\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Format Preservation Tests",
+            "item": [
+                {
+                    "name": "Bullet Points and Lists Format Test",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"# Patient Health Summary\\n\\n## Medical History\\n* **Hypertension**: Diagnosed in 2018\\n* **Type 2 Diabetes**: Diagnosed in 2019\\n  * HbA1c: 7.2% (last checked 2023-05-15)\\n  * Currently managed with Metformin 1000mg twice daily\\n* **Allergies**:\\n  * Penicillin - Severe rash\\n  * Shellfish - Anaphylaxis\\n\\n## Current Medications\\n| Medication | Dosage | Frequency | Purpose |\\n|------------|--------|-----------|---------|\\n| Lisinopril | 10mg | Once daily | Hypertension |\\n| Metformin | 1000mg | Twice daily | Diabetes |\\n| Aspirin | 81mg | Once daily | Cardiac prophylaxis |\\n\\n## Recommended Follow-up\\n1. Schedule endocrinology appointment within 3 months\\n2. Blood pressure monitoring weekly\\n3. Complete lipid panel at next visit\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"preserve_formatting\": true,\n    \"provider\": \"anthropic\",\n    \"model\": \"claude-3-5-sonnet-20241022\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Insurance Document Format Test",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"# Property Insurance Policy\\n\\n## Coverage Summary\\n\\n* **Building Coverage**: $250,000\\n* **Personal Property**: $125,000\\n* **Liability**: $300,000\\n* **Deductible**: $1,000\\n\\n## Exclusions\\n\\nThis policy does NOT cover losses resulting from:\\n\\n1. Flood damage\\n2. Earthquake damage\\n3. Intentional acts\\n4. War or nuclear hazard\\n\\n## Claims Process\\n\\nIn the event of a loss:\\n\\n1. Contact agent within 24 hours\\n2. Document all damages with photographs\\n3. Complete claim form available at www.example.com/claims\\n4. Provide requested documentation:\\n   - Proof of ownership\\n   - Estimated value\\n   - Police report (if applicable)\\n\\n## Premium Schedule\\n\\n| Payment Option | Amount | Due Date |\\n|---------------|--------|----------|\\n| Annual | $1,200 | January 1 |\\n| Semi-annual | $625 | Jan 1 & Jul 1 |\\n| Quarterly | $325 | Jan/Apr/Jul/Oct 1 |\",\n    \"source_language\": \"en\",\n    \"target_language\": \"zh\",\n    \"domain\": \"insurance\",\n    \"quality_level\": \"high\",\n    \"preserve_formatting\": true,\n    \"provider\": \"openai\",\n    \"model\": \"gpt-4o\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Medical Table Format Test - OpenAI GPT-4o Mini",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"# Laboratory Test Results\\n\\n| Test | Result | Reference Range | Status |\n|------|--------|-----------------|--------|\n| Hemoglobin | 14.2 g/dL | 13.5-17.5 g/dL | Normal |\n| White Blood Cells | 6,500/μL | 4,500-11,000/μL | Normal |\n| Platelets | 250,000/μL | 150,000-450,000/μL | Normal |\n| Glucose (fasting) | 110 mg/dL | 70-99 mg/dL | Elevated |\n| Total Cholesterol | 215 mg/dL | <200 mg/dL | Elevated |\n| HDL Cholesterol | 45 mg/dL | >40 mg/dL | Normal |\n| LDL Cholesterol | 142 mg/dL | <100 mg/dL | Elevated |\n| Triglycerides | 140 mg/dL | <150 mg/dL | Normal |\n\\n## Recommendations\\n\\n* **Dietary Changes**: Reduce intake of simple carbohydrates and saturated fats\\n* **Exercise**: 150 minutes of moderate-intensity activity per week\\n* **Follow-up**: Schedule lipid panel in 3 months\",\n    \"source_language\": \"en\",\n    \"target_language\": \"fr\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"preserve_formatting\": true,\n    \"provider\": \"openai\",\n    \"model\": \"gpt-4o-mini\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Insurance Code Blocks Test - Claude 3.5 Haiku",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"# Policy Calculation Guidelines\\n\\n## Premium Formula\\n\\n```\\npremium = base_rate * age_factor * coverage_factor * risk_factor\\n\\nwhere:\\n  base_rate = $500\\n  age_factor = 1 + ((age - 25) * 0.02) [minimum 1.0]\\n  coverage_factor = coverage_amount / 100000\\n  risk_factor = 1.0 (standard), 1.3 (high risk), 0.9 (low risk)\\n```\\n\\n## Deductible Options\\n\\n| Option | Deductible | Premium Discount |\n|--------|------------|------------------|\n| Low | $500 | 0% |\n| Standard | $1,000 | 10% |\n| High | $2,500 | 25% |\n| Maximum | $5,000 | 40% |\\n\\n## Coverage Limits\\n\\n* Minimum: $50,000\\n* Maximum: $1,000,000\\n* Recommended: 10x annual income\",\n    \"source_language\": \"en\",\n    \"target_language\": \"de\",\n    \"domain\": \"insurance\",\n    \"quality_level\": \"high\",\n    \"preserve_formatting\": true,\n    \"provider\": \"anthropic\",\n    \"model\": \"claude-3-5-haiku-20241022\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Complex Healthcare Formatting - Gemini 2.0 Flash",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"# Treatment Protocol: Acute Coronary Syndrome\\n\\n## Initial Assessment (0-10 minutes)\\n\\n1. **Vital Signs**\\n   * Blood pressure: Target <140/90 mmHg\\n   * Heart rate: Monitor for tachycardia/bradycardia\\n   * Oxygen saturation: Maintain >94%\\n\\n2. **Immediate Interventions**\\n   * Oxygen therapy if saturation <94%\\n   * Aspirin 325mg (chewed)\\n   * Nitroglycerin 0.4mg SL (if SBP >90 mmHg)\\n   * Morphine 2-4mg IV (for pain unresponsive to nitrates)\\n\\n## Diagnostic Pathway\\n\\n| Test | Timing | Purpose |\\n|------|--------|---------|\\n| 12-lead ECG | Immediate (<10 min) | ST-elevation identification |\\n| Cardiac biomarkers | 0h, 3h, 6h | Confirm myocardial injury |\\n| Complete blood count | Initial | Baseline hematologic status |\\n| Basic metabolic panel | Initial | Electrolyte/renal function |\\n| Chest X-ray | When stable | Cardiac size, pulmonary congestion |\\n\\n## STEMI Protocol\\n\\n```\\nIf ECG shows ST-elevation ≥1mm in ≥2 contiguous leads OR\\nnew LBBB with symptoms:\\n\\n1. Activate cardiac catheterization team\\n2. Goal: Door-to-balloon time <90 minutes\\n3. If PCI not available within 120 minutes, consider fibrinolysis\\n   (if no contraindications)\\n```\\n\\n> **NOTE**: Document absolute/relative contraindications to thrombolysis before administration!\\n\\n## Medication Dosing Chart\\n\\n* **Antiplatelets**:\\n  * Aspirin: 325mg initial, then 81mg daily\\n  * Clopidogrel: 600mg loading, then 75mg daily\\n  * Ticagrelor: 180mg loading, then in 90mg BID\\n\\n* **Anticoagulation**:\\n  * Unfractionated Heparin: 60 units/kg bolus (max 4,000 units), then 12 units/kg/hr (max 1,000 units/hr)\\n  * Enoxaparin: 1mg/kg SC q12h (reduce to 0.75mg/kg if age ≥75)\",\n    \"source_language\": \"en\",\n    \"target_language\": \"ja\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"preserve_formatting\": true,\n    \"provider\": \"google\",\n    \"model\": \"gemini-2.0-flash\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Insurance Claims Process - Llama 3.3 70B",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"# Insurance Claim Processing Guide\\n\\n## Required Documentation\\n\\n* **Claim Form** (Form INS-101)\\n* **Proof of Loss**\\n  * Photos of damage\\n  * Repair estimates from licensed contractors\\n  * Police report (if applicable)\\n* **Policy Information**\\n  * Policy number\\n  * Coverage verification\\n\\n## Claims Timeline\\n\\n| Stage | Timeline | Responsible Party |\\n|-------|----------|-------------------|\\n| Initial Report | Within 48 hours of incident | Policyholder |\\n| Claim Assignment | 1-2 business days | Claims Department |\\n| Initial Assessment | 3-5 business days | Claims Adjuster |\\n| Documentation Review | 5-10 business days | Claims Processor |\\n| Decision | 15-30 business days | Senior Adjuster |\\n| Payment Processing | 5-7 business days after approval | Finance Department |\\n\\n## Appeal Process\\n\\n1. **File Written Appeal**\\n   * Submit Form APP-202 within 30 days of decision\\n   * Include any new supporting documentation\\n   * Specify the grounds for appeal\\n\\n2. **Appeal Review**\\n   * Independent review by Appeal Committee\\n   * May request additional information\\n   * Decision within 45 days\\n\\n3. **External Review**\\n   * Available if internal appeal is denied\\n   * Must request within 60 days of appeal decision\\n   * Conducted by independent third party\\n\\n> **Important**: All communications regarding claims should be documented in writing. Verbal discussions should be followed up with email confirmation.\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"insurance\",\n    \"quality_level\": \"high\",\n    \"preserve_formatting\": true,\n    \"provider\": \"groq\",\n    \"model\": \"llama-3.3-70b-versatile\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Medical Device Specifications - DeepSeek Chat",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"# Portable Patient Monitor: Technical Specifications\\n\\n## Display Characteristics\\n\\n| Feature | Specification |\\n|---------|---------------|\\n| Size | 10.4\" diagonal |\\n| Resolution | 1024 x 768 pixels |\\n| Type | LED, capacitive touch |\\n| Brightness | 500 cd/m² |\\n| Viewing Angle | 178° (H/V) |\\n\\n## Monitoring Parameters\\n\\n* **ECG**\\n  * Leads: 3/5-lead capability\\n  * Heart Rate Range: 15-350 BPM\\n  * Accuracy: ±1 BPM or ±1%, whichever is greater\\n  * Arrhythmia Detection: 20+ classifications\\n\\n* **SpO₂**\\n  * Range: 0-100%\\n  * Accuracy: ±2% (70-100%), ±3% (50-69%)\\n  * Pulse Rate Range: 25-240 BPM\\n\\n* **NIBP**\\n  * Method: Oscillometric\\n  * Range: 10-270 mmHg\\n  * Accuracy: ±3 mmHg or ±2%, whichever is greater\\n\\n## Power Specifications\\n\\n```\\nOperating Voltage: 100-240 VAC, 50/60 Hz\\nBattery Type: Lithium-ion, 11.1V, 4400mAh\\nBattery Life: 5 hours typical operation\\nCharging Time: <4 hours to 90% capacity\\n```\\n\\n## Environmental Parameters\\n\\n1. **Operating Conditions**\\n   * Temperature: 5°C to 40°C (41°F to 104°F)\\n   * Humidity: 15-95% RH, non-condensing\\n   * Altitude: -500 to 4,600 meters (-1,600 to 15,000 feet)\\n\\n2. **Storage/Transport Conditions**\\n   * Temperature: -20°C to 60°C (-4°F to 140°F)\\n   * Humidity: 10-95% RH, non-condensing\\n\\n> **WARNING**: This device is not suitable for use in the presence of flammable anesthetics or in MRI environments.\",\n    \"source_language\": \"en\",\n    \"target_language\": \"zh\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"preserve_formatting\": true,\n    \"provider\": \"deepseek\",\n    \"model\": \"deepseek-chat\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Insurance Terms Glossary - Command-R Plus",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"# Insurance Terminology Glossary\\n\\n## Policy Components\\n\\n* **Premium**: The amount paid by the policyholder for coverage\\n* **Deductible**: Amount the insured must pay before insurance benefits begin\\n* **Co-insurance**: Percentage of costs shared between insurer and insured\\n* **Out-of-pocket maximum**: The most an insured will pay during the policy period\\n\\n## Policy Types\\n\\n| Policy Type | Description | Typical Coverage |\\n|------------|-------------|------------------|\\n| Term Life | Coverage for specific time period | Death benefit only |\\n| Whole Life | Lifetime coverage with investment component | Death benefit + cash value |\\n| Health | Medical expense coverage | Preventive care, illness, injury |\\n| Auto | Vehicle-related liability and damages | Liability, collision, comprehensive |\\n| Homeowners | Residence and personal property protection | Dwelling, liability, personal property |\\n\\n## Claims Terminology\\n\\n1. **Claim**: Formal request for payment from an insurance company\\n2. **Adjuster**: Person who investigates and settles claims\\n3. **Appraisal**: Evaluation of property damage or value\\n4. **Subrogation**: Insurer's right to recover costs from third party\\n5. **Exclusion**: Specific condition or circumstance not covered\\n\\n## Legal Concepts\\n\\n```\\nInsurable Interest: Financial interest in the insured person/property\\nMaterial Misrepresentation: False statements affecting underwriting\\nUtmost Good Faith: Obligation to disclose all relevant information\\nIndemnity: Principle of returning insured to pre-loss condition\\n```\\n\\n> **Note**: This glossary is for informational purposes only and does not constitute legal advice or modify any policy provisions.\",\n    \"source_language\": \"en\",\n    \"target_language\": \"fr\",\n    \"domain\": \"insurance\",\n    \"quality_level\": \"high\",\n    \"preserve_formatting\": true,\n    \"provider\": \"cohere\",\n    \"model\": \"command-r-plus-08-2024\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Clinical Trial Protocol - Mistral 7B",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"# Clinical Trial Protocol Summary\\n\\n## Study Design\\n\\n* **Study Type**: Phase III, randomized, double-blind, placebo-controlled\\n* **Population**: Adults 18-75 years with moderate to severe hypertension\\n* **Allocation**: 1:1 (active:placebo)\\n* **Duration**: 52 weeks (12-week treatment + 40-week follow-up)\\n* **Sample Size**: 500 participants (250 per arm)\\n\\n## Inclusion Criteria\\n\\n1. Systolic BP ≥140 mmHg or Diastolic BP ≥90 mmHg\\n2. Previously diagnosed essential hypertension\\n3. Stable on current antihypertensive regimen for ≥4 weeks\\n4. Willing to comply with study procedures\\n\\n## Exclusion Criteria\\n\\n| Criteria | Details |\\n|----------|---------|\\n| Secondary hypertension | Any etiology |\\n| Recent cardiovascular event | Within 6 months of screening |\\n| Severe renal impairment | eGFR <30 mL/min/1.73m² |\\n| Hepatic dysfunction | ALT or AST >3x ULN |\\n| Pregnancy/Breastfeeding | Women of childbearing potential must use contraception |\\n\\n## Study Procedures\\n\\n```\\nScreening (Days -28 to -1):\\n  - Medical history\\n  - Physical examination\\n  - Vital signs\\n  - Clinical laboratory tests\\n  - 12-lead ECG\\n\\nRandomization (Day 0):\\n  - Confirm eligibility\\n  - Baseline assessments\\n  - Dispense study medication\\n\\nTreatment Period (Weeks 1-12):\\n  - Visits at Weeks 2, 4, 8, 12\\n  - Assess vital signs, adverse events\\n  - Medication adherence\\n  - Laboratory tests at Weeks 4 and 12\\n```\\n\\n## Endpoints\\n\\n* **Primary**: Change from baseline in mean 24-hour ambulatory SBP at Week 12\\n* **Secondary**:\\n  * Proportion of patients achieving BP control (<130/80 mmHg)\\n  * Change in clinic BP measurements\\n  * Change in quality of life scores\\n  * Incidence of adverse events\\n\\n> **Important Safety Monitoring**: All participants will be monitored for hypotension, syncope, electrolyte abnormalities, and renal function deterioration throughout the study period.\",\n    \"source_language\": \"en\",\n    \"target_language\": \"de\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"preserve_formatting\": true,\n    \"provider\": \"huggingface\",\n    \"model\": \"mistralai/Mistral-7B-Instruct-v0.3\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Format Preservation Disabled Test",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"# Patient Health Summary\\n\\n## Medical History\\n* **Hypertension**: Diagnosed in 2018\\n* **Type 2 Diabetes**: Diagnosed in 2019\\n  * HbA1c: 7.2% (last checked 2023-05-15)\\n  * Currently managed with Metformin 1000mg twice daily\\n* **Allergies**:\\n  * Penicillin - Severe rash\\n  * Shellfish - Anaphylaxis\\n\\n## Current Medications\\n| Medication | Dosage | Frequency | Purpose |\\n|------------|--------|-----------|---------|\\n| Lisinopril | 10mg | Once daily | Hypertension |\\n| Metformin | 1000mg | Twice daily | Diabetes |\\n| Aspirin | 81mg | Once daily | Cardiac prophylaxis |\\n\\n## Recommended Follow-up\\n1. Schedule endocrinology appointment within 3 months\\n2. Blood pressure monitoring weekly\\n3. Complete lipid panel at next visit\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"preserve_formatting\": false,\n    \"provider\": \"anthropic\",\n    \"model\": \"claude-3-5-sonnet-20241022\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "High Quality vs Medium Quality Format Test",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"# Insurance Claim Process\\n\\n## Required Documentation\\n\\n* **Claim Form**: Must be completed in full\\n* **Proof of Loss**: Original receipts, estimates\\n* **Photos**: Clear images of all damage\\n* **Police Report**: For theft, vandalism (if applicable)\\n\\n## Process Timeline\\n\\n| Step | Timeframe | Notes |\\n|------|-----------|-------|\\n| Submit Claim | Within 30 days of incident | All documentation required |\\n| Initial Review | 1-3 business days | Claim number will be assigned |\\n| Adjuster Contact | 3-5 business days | May require property inspection |\\n| Damage Assessment | 5-10 business days | Additional documentation may be requested |\\n| Claim Decision | 10-15 business days | Approval or denial notification |\\n| Payment Processing | 5-7 business days after approval | Direct deposit or check options |\\n\\n## Appeal Process\\n\\n1. Request review within 30 days of decision\\n2. Provide additional documentation if available\\n3. Independent review conducted within 15 business days\\n4. Final determination communicated in writing\",\n    \"source_language\": \"en\",\n    \"target_language\": \"fr\",\n    \"domain\": \"insurance\",\n    \"quality_level\": \"medium\",\n    \"preserve_formatting\": true,\n    \"provider\": \"openai\",\n    \"model\": \"gpt-4o\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "API Info",
+            "item": [
+                {
+                    "name": "Get Supported Languages",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{BASE_URL}}/supported-languages",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["supported-languages"]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Supported Providers",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{BASE_URL}}/supported-providers",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["supported-providers"]
+                        }
+                    }
+                },
+                {
+                    "name": "Health Check",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{BASE_URL}}/health",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["health"]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+} 
