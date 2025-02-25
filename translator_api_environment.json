@@ -1,0 +1,67 @@
+{
+    "id": "translator-api-env",
+    "name": "Translator API Environment",
+    "values": [
+        {
+            "key": "BASE_URL",
+            "value": "http://localhost:8000",
+            "type": "default",
+            "enabled": true
+        },
+        {
+            "key": "OPENAI_API_KEY",
+            "value": "your-openai-api-key-here",
+            "type": "secret",
+            "enabled": true
+        },
+        {
+            "key": "ANTHROPIC_API_KEY",
+            "value": "your-anthropic-api-key-here",
+            "type": "secret",
+            "enabled": true
+        },
+        {
+            "key": "GOOGLE_API_KEY",
+            "value": "your-google-api-key-here",
+            "type": "secret",
+            "enabled": true
+        },
+        {
+            "key": "GROQ_API_KEY",
+            "value": "your-groq-api-key-here",
+            "type": "secret",
+            "enabled": true
+        },
+        {
+            "key": "DEEPSEEK_API_KEY",
+            "value": "your-deepseek-api-key-here",
+            "type": "secret",
+            "enabled": true
+        },
+        {
+            "key": "HF_TOKEN",
+            "value": "your-huggingface-token-here",
+            "type": "secret",
+            "enabled": true
+        },
+        {
+            "key": "COHERE_API_KEY",
+            "value": "your-cohere-api-key-here",
+            "type": "secret",
+            "enabled": true
+        },
+        {
+            "key": "DEFAULT_PROVIDER",
+            "value": "openai",
+            "type": "default",
+            "enabled": true
+        },
+        {
+            "key": "DEFAULT_MODEL",
+            "value": "gpt-4o-mini",
+            "type": "default",
+            "enabled": true
+        }
+    ],
+    "_postman_variable_scope": "environment"
+} 
