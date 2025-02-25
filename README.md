@@ -12,6 +12,8 @@ A specialized translation service for P&C Insurance and Healthcare domains using
 - Advanced format preservation for complex documents
 - Quality validation with detailed feedback
 - HIPAA-compliant logging and processing
+- Smart document chunking for handling documents of any size
+- Continuation marker cleanup for seamless translations
 
 ### Supported AI Providers & Models
 
@@ -41,6 +43,29 @@ A specialized translation service for P&C Insurance and Healthcare domains using
 - Cohere: Command-R Plus
 - DeepSeek: DeepSeek Chat
 - HuggingFace: Mistral-7B-Instruct-v0.3
+
+### Latest Improvements
+
+#### Enhanced Document Chunking (November 2024)
+
+The system now features an improved document chunking mechanism that:
+
+- Intelligently handles documents of any size by breaking them into optimal chunks
+- Preserves paragraph and sentence boundaries during chunking
+- Processes each chunk with appropriate context for consistent translations
+- Automatically detects and removes continuation markers between chunks
+- Provides seamless end-to-end translations regardless of document length
+
+#### Continuation Marker Cleanup
+
+For large documents processed in chunks, the system now automatically:
+
+- Detects and removes any continuation phrases or markers between chunks
+- Eliminates phrases like "[Continúa la traducción...]" or "Would you like me to continue?"
+- Ensures clean transitions between translated segments
+- Produces a final translation that appears as a single cohesive document
+
+These improvements eliminate issues with incomplete translations and ensure professional, seamless output for documents of any size.
 
 ### Domain Expertise
 
