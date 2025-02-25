@@ -1,0 +1,359 @@
+{
+    "info": {
+        "name": "Translator API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "OpenAI Models",
+            "item": [
+                {
+                    "name": "GPT-4o Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Patient presents with acute myocardial infarction and requires immediate intervention\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"openai\",\n    \"model\": \"gpt-4o\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "GPT-4o Mini Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Regular check-up shows normal vital signs and good overall health\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"openai\",\n    \"model\": \"gpt-4o-mini\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Anthropic Models",
+            "item": [
+                {
+                    "name": "Claude 3.5 Sonnet Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Complex surgical procedure requires careful monitoring of vital signs\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"anthropic\",\n    \"model\": \"claude-3-5-sonnet-20241022\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Claude 3.5 Haiku Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Patient medical history indicates no prior complications\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"anthropic\",\n    \"model\": \"claude-3-5-haiku-20241022\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Google Models",
+            "item": [
+                {
+                    "name": "Gemini 2.0 Flash Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Insurance policy coverage details and terms of service\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"insurance\",\n    \"quality_level\": \"high\",\n    \"provider\": \"google\",\n    \"model\": \"gemini-2.0-flash\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Gemini 1.5 Pro Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Comprehensive medical examination report and diagnosis\",\n    \"source_language\": \"en\",\n    \"target_language\": \"zh\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"google\",\n    \"model\": \"gemini-1.5-pro\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Groq Models",
+            "item": [
+                {
+                    "name": "Llama 3.3 70B Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Advanced diagnostic procedures and treatment recommendations\",\n    \"source_language\": \"en\",\n    \"target_language\": \"zh\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"groq\",\n    \"model\": \"llama-3.3-70b-versatile\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Llama 3.3 SpecDec Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Standard insurance claim processing guidelines\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"insurance\",\n    \"quality_level\": \"high\",\n    \"provider\": \"groq\",\n    \"model\": \"llama-3.3-70b-specdec\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "DeepSeek Models",
+            "item": [
+                {
+                    "name": "DeepSeek Chat Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Medical device specifications and usage instructions\",\n    \"source_language\": \"en\",\n    \"target_language\": \"zh\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"deepseek\",\n    \"model\": \"deepseek-chat\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cohere Models",
+            "item": [
+                {
+                    "name": "Command-R Plus Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Insurance policy renewal terms and conditions\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"insurance\",\n    \"quality_level\": \"high\",\n    \"provider\": \"cohere\",\n    \"model\": \"command-r-plus-08-2024\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Hugging Face Models",
+            "item": [
+                {
+                    "name": "Mistral 7B Translation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"Patient discharge summary and follow-up instructions\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"provider\": \"huggingface\",\n    \"model\": \"mistralai/Mistral-7B-Instruct-v0.3\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Format Preservation Tests",
+            "item": [
+                {
+                    "name": "Bullet Points and Lists Format Test",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"# Patient Health Summary\\n\\n## Medical History\\n* **Hypertension**: Diagnosed in 2018\\n* **Type 2 Diabetes**: Diagnosed in 2019\\n  * HbA1c: 7.2% (last checked 2023-05-15)\\n  * Currently managed with Metformin 1000mg twice daily\\n* **Allergies**:\\n  * Penicillin - Severe rash\\n  * Shellfish - Anaphylaxis\\n\\n## Current Medications\\n| Medication | Dosage | Frequency | Purpose |\\n|------------|--------|-----------|---------|\\n| Lisinopril | 10mg | Once daily | Hypertension |\\n| Metformin | 1000mg | Twice daily | Diabetes |\\n| Aspirin | 81mg | Once daily | Cardiac prophylaxis |\\n\\n## Recommended Follow-up\\n1. Schedule endocrinology appointment within 3 months\\n2. Blood pressure monitoring weekly\\n3. Complete lipid panel at next visit\",\n    \"source_language\": \"en\",\n    \"target_language\": \"es\",\n    \"domain\": \"healthcare\",\n    \"quality_level\": \"high\",\n    \"preserve_formatting\": true,\n    \"provider\": \"anthropic\",\n    \"model\": \"claude-3-5-sonnet-20241022\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                },
+                {
+                    "name": "Insurance Document Format Test",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"text\": \"# Property Insurance Policy\\n\\n## Coverage Summary\\n\\n* **Building Coverage**: $250,000\\n* **Personal Property**: $125,000\\n* **Liability**: $300,000\\n* **Deductible**: $1,000\\n\\n## Exclusions\\n\\nThis policy does NOT cover losses resulting from:\\n\\n1. Flood damage\\n2. Earthquake damage\\n3. Intentional acts\\n4. War or nuclear hazard\\n\\n## Claims Process\\n\\nIn the event of a loss:\\n\\n1. Contact agent within 24 hours\\n2. Document all damages with photographs\\n3. Complete claim form available at www.example.com/claims\\n4. Provide requested documentation:\\n   - Proof of ownership\\n   - Estimated value\\n   - Police report (if applicable)\\n\\n## Premium Schedule\\n\\n| Payment Option | Amount | Due Date |\\n|---------------|--------|----------|\\n| Annual | $1,200 | January 1 |\\n| Semi-annual | $625 | Jan 1 & Jul 1 |\\n| Quarterly | $325 | Jan/Apr/Jul/Oct 1 |\",\n    \"source_language\": \"en\",\n    \"target_language\": \"zh\",\n    \"domain\": \"insurance\",\n    \"quality_level\": \"high\",\n    \"preserve_formatting\": true,\n    \"provider\": \"openai\",\n    \"model\": \"gpt-4o\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/translate",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["translate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "API Info",
+            "item": [
+                {
+                    "name": "Get Supported Languages",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{BASE_URL}}/supported-languages",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["supported-languages"]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Supported Providers",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{BASE_URL}}/supported-providers",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["supported-providers"]
+                        }
+                    }
+                },
+                {
+                    "name": "Health Check",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{BASE_URL}}/health",
+                            "host": ["{{BASE_URL}}"],
+                            "path": ["health"]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+} 
