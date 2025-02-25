@@ -30,6 +30,12 @@ The tests validate the following aspects of format preservation:
    - Google (Gemini models)
    - Groq (Llama models)
    - Cohere, DeepSeek, and Hugging Face models
+5. **Large document handling:**
+
+   - Smart chunking and seamless reassembly
+   - Continuation marker detection and removal
+   - Cross-chunk consistency validation
+
 
 ## Running the Tests
 
@@ -57,6 +63,7 @@ This will execute the full test suite and generate the following JSON result fil
 - `language_pair_test_results.json`: Results for all language pairs
 - `domain_test_results.json`: Domain-specific formatting results
 - `preserve_formatting_test_results.json`: Impact of the `preserve_formatting` flag
+
 
 ### Run with pytest
 
@@ -88,6 +95,14 @@ Tests domain-specific formatting differences across healthcare and insurance dom
 
 Compares formatting preservation with the `preserve_formatting` flag set to `True` vs `False`.
 
+### test_large_document_chunking
+
+Tests the system's ability to handle documents that exceed the model's context window by:
+- Validating proper chunking of large documents
+- Ensuring continuation markers are properly removed
+- Verifying consistency of formatting and terminology across chunks
+- Measuring seam quality between rejoined chunks
+
 ## Validation Criteria
 
 The format preservation check validates:
@@ -98,14 +113,3 @@ The format preservation check validates:
 4. Table row count preservation
 5. Header count preservation
 6. Bold text format preservation
-
-## Results Analysis
-
-After running the tests, review the JSON result files to:
-
-1. Identify which models perform best for format preservation
-2. See which formatting elements are most reliably preserved
-3. Compare performance across language pairs
-4. Verify the impact of the `preserve_formatting` flag
-
-The success criterion is a 70% overall pass rate for all tests combined.
