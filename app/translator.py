@@ -53,6 +53,9 @@ class UnifiedTranslator:
             os.environ["HF_TOKEN"] = hf_token
             # Set it directly on the client as per documentation
             setattr(self.client, "huggingface_api_key", hf_token)
+            
+        # Special handling for Google Vertex AI setup
+        self._setup_google_vertex_ai()
         
         # Add validator
         self.validator = TranslationValidator()
@@ -100,6 +103,50 @@ class UnifiedTranslator:
                 "default": {"input_tokens": 4096, "max_output_tokens": 4096}
             }
         }
+        
+    def _setup_google_vertex_ai(self):
+        """
+        Set up Google Vertex AI integration based on aisuite guide:
+        https://github.com/andrewyng/aisuite/blob/main/guides/google.md
+        """
+        # Check if the required environment variables for Google Vertex AI are set
+        google_project_id = os.getenv("GOOGLE_PROJECT_ID")
+        google_region = os.getenv("GOOGLE_REGION")
+        google_credentials = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+        
+        # Log whether Google Vertex AI is properly configured
+        if all([google_project_id, google_region, google_credentials]):
+            logger.info(f"Google Vertex AI configured with project ID: {google_project_id}, region: {google_region}")
+            
+            # Ensure the credentials file exists
+            if not os.path.exists(google_credentials):
+                logger.warning(f"Google credentials file not found at: {google_credentials}")
+            else:
+                logger.info("Google credentials file found")
+                
+            # Set these environment variables for aisuite/vertexai
+            os.environ["GOOGLE_PROJECT_ID"] = google_project_id
+            os.environ["GOOGLE_REGION"] = google_region
+            os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = google_credentials
+            
+            try:
+                # Optional: Try importing vertexai to check if it's installed
+                import importlib
+                vertexai_spec = importlib.util.find_spec("vertexai")
+                if vertexai_spec is None:
+                    logger.warning("vertexai package not found. Please install with: pip install vertexai")
+                else:
+                    logger.info("vertexai package found")
+            except ImportError:
+                logger.warning("Could not check for vertexai package. Please ensure it's installed.")
+        else:
+            missing_vars = []
+            if not google_project_id: missing_vars.append("GOOGLE_PROJECT_ID")
+            if not google_region: missing_vars.append("GOOGLE_REGION")
+            if not google_credentials: missing_vars.append("GOOGLE_APPLICATION_CREDENTIALS")
+            
+            logger.warning(f"Google Vertex AI not fully configured. Missing environment variables: {', '.join(missing_vars)}")
+            logger.warning("Google models may not work properly. Please refer to: https://github.com/andrewyng/aisuite/blob/main/guides/google.md")
         
     def _get_model_limits(self, provider: str, model: str) -> Dict:
         """Get input and output token limits for a specific model"""

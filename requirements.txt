@@ -6,15 +6,7 @@ aisuite[all]
 aiohttp
 async-timeout
 tiktoken
-transformers
-torch
-pandas
-sentencepiece
-accelerate
-bitsandbytes
-safetensors
+vertexai
 google-generativeai
-pytest
-pytest-asyncio
 jsonschema
 httpx 
