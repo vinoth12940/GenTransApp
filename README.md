@@ -44,6 +44,63 @@ A specialized translation service for P&C Insurance and Healthcare domains using
 - DeepSeek: DeepSeek Chat
 - HuggingFace: Mistral-7B-Instruct-v0.3
 
+### Google Vertex AI Setup
+
+To use Google's Gemini models through Vertex AI, you need to set up the proper IAM roles for your service account. Follow these steps:
+
+1. **Install Google Cloud SDK** (if not already installed):
+   ```bash
+   # For macOS with Homebrew
+   brew install --cask google-cloud-sdk
+   
+   # Alternative: Direct installation
+   curl https://sdk.cloud.google.com > install.sh && bash install.sh --disable-prompts
+   ```
+
+2. **Initialize and authenticate**:
+   ```bash
+   gcloud init
+   gcloud auth login
+   gcloud config set project YOUR_PROJECT_ID
+   ```
+
+3. **Enable the Vertex AI API**:
+   ```bash
+   gcloud services enable aiplatform.googleapis.com
+   ```
+
+4. **Add required IAM roles** to your service account:
+   ```bash
+   # Replace SERVICE_ACCOUNT_NAME and PROJECT_ID with your values
+   
+   # Vertex AI User role - Basic access to use Vertex AI models
+   gcloud projects add-iam-policy-binding PROJECT_ID \
+     --member=serviceAccount:SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com \
+     --role=roles/aiplatform.user
+   
+   # Vertex AI Service Agent role - Allows the service account to act as a Vertex AI service agent
+   gcloud projects add-iam-policy-binding PROJECT_ID \
+     --member=serviceAccount:SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com \
+     --role=roles/aiplatform.serviceAgent
+   
+   # Vertex AI Admin role - Full administrative access to Vertex AI resources
+   gcloud projects add-iam-policy-binding PROJECT_ID \
+     --member=serviceAccount:SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com \
+     --role=roles/aiplatform.admin
+   
+   # Service Account User role - Allows the service account to be properly impersonated
+   gcloud projects add-iam-policy-binding PROJECT_ID \
+     --member=serviceAccount:SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com \
+     --role=roles/iam.serviceAccountUser
+   ```
+
+5. **Verify IAM roles**:
+   ```bash
+   gcloud projects get-iam-policy PROJECT_ID --format=json | grep -A 10 SERVICE_ACCOUNT_NAME
+   ```
+
+These IAM roles are required to resolve the "Permission 'aiplatform.endpoints.predict' denied" error when accessing Gemini models through Vertex AI.
+
 ### Latest Improvements
 
 #### Enhanced Document Chunking (November 2024)
@@ -217,41 +274,94 @@ flowchart TB
 
 ## Setup
 
-1. Create and activate a virtual environment:
+### Prerequisites
+
+- Python 3.8 or higher
+- Git
+- Google Cloud SDK (for Google Vertex AI integration)
+
+### Installation Steps
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/insurance-healthcare-translation-api.git
+cd insurance-healthcare-translation-api
+```
+
+2. Create and activate a virtual environment:
 
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-2. Install dependencies:
+3. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Configure environment variables:
+4. Configure environment variables:
 
 ```bash
-# Create .env file with your API keys
-OPENAI_API_KEY=your_key
-ANTHROPIC_API_KEY=your_key
-GOOGLE_API_KEY=your_key
-GROQ_API_KEY=your_key
-DEEPSEEK_API_KEY=your_key
-COHERE_API_KEY=your_key
-HF_TOKEN=your_key
+# Copy the example environment file
+cp .env.example .env
 
-# Optional configuration
-DEFAULT_PROVIDER=openai
-DEFAULT_MODEL=gpt-4o-mini
+# Edit the .env file with your API keys
+# Required API keys (at least one provider is needed):
+# - OPENAI_API_KEY
+# - ANTHROPIC_API_KEY
+# - GOOGLE_API_KEY or GOOGLE_APPLICATION_CREDENTIALS (for Vertex AI)
+# - GROQ_API_KEY
+# - DEEPSEEK_API_KEY
+# - COHERE_API_KEY
+# - HF_TOKEN
 ```
 
-4. Run the application:
+5. For Google Vertex AI setup (if using Google Gemini models):
 
 ```bash
-uvicorn app:app --reload
+# Install Google Cloud SDK if not already installed
+./install.sh
+
+# Initialize and authenticate
+gcloud init
+gcloud auth login
+gcloud config set project YOUR_PROJECT_ID
+
+# Enable the Vertex AI API
+gcloud services enable aiplatform.googleapis.com
+
+# Set up IAM roles as described in the "Google Vertex AI Setup" section
 ```
+
+6. Run the application:
+
+```bash
+# Using the run.py script
+python run.py
+
+# Or directly with uvicorn
+uvicorn app.main:app --reload
+```
+
+7. Access the API documentation:
+
+```
+http://localhost:8000/docs
+```
+
+### Verifying Installation
+
+To verify that your installation is working correctly:
+
+1. Open your browser and navigate to `http://localhost:8000/docs`
+2. Expand the GET `/health` endpoint
+3. Click "Try it out" and then "Execute"
+4. You should receive a 200 OK response with system health information
+
+If you encounter any issues, refer to the "Error Handling" and "Troubleshooting" sections.
 
 ## API Documentation
 
@@ -472,6 +582,43 @@ Returns system health status and metrics
 - Rate limit monitoring
 - API key validation
 - Comprehensive error messages
+
+### Troubleshooting Google Vertex AI
+
+If you encounter the following error when using Google Gemini models:
+
+```
+Permission 'aiplatform.endpoints.predict' denied on resource '//aiplatform.googleapis.com/projects/PROJECT_ID/locations/LOCATION/publishers/google/models/MODEL_NAME'
+```
+
+This indicates an IAM permission issue. Follow these steps to resolve it:
+
+1. **Check that your service account has the necessary IAM roles** as described in the "Google Vertex AI Setup" section.
+
+2. **Verify API enablement**:
+   ```bash
+   gcloud services list --enabled | grep aiplatform
+   ```
+   If not listed, enable it with: `gcloud services enable aiplatform.googleapis.com`
+
+3. **Check model availability** in your region:
+   ```bash
+   gcloud ai models list --region=REGION
+   ```
+
+4. **Verify billing status** for your Google Cloud project.
+
+5. **Consider using application-default credentials** if running locally:
+   ```bash
+   gcloud auth application-default login
+   ```
+
+6. **Check for account type restrictions**: Some Gemini model features require a monthly invoiced billing account.
+
+7. **Alternative approach**: If Vertex AI issues persist, consider using the Google AI Python SDK directly:
+   ```bash
+   pip install google-generativeai
+   ```
 
 ## Support
 

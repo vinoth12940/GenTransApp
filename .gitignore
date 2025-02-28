@@ -54,3 +54,6 @@ preserve_formatting_test_results.json
 # OS
 .DS_Store
 Thumbs.db 
+
+# Google Vertex AI
+gen-lang-client-0660278817-e86260f71a4a.json
